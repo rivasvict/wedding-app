@@ -2,11 +2,6 @@
 
 class InvitationController {
   constructor() {
-    console.log('yaaaay');
-  }
-
-  test(token) {
-    return token;
   }
 }
 

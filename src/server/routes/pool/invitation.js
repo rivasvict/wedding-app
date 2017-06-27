@@ -9,7 +9,8 @@ const invitationRoutes = express => {
   const invitationRoutesBaseUri   = invitationRoutes.baseUri;
 
   const invitationHandler = (req, res) => {
-    res.send(InvitationController.test(req.params.token));
+    //res.send(InvitationController.test(req.params.token));
+    res.send('yeah');
   }
 
   router.get(invitationRoutesBaseUri + ':token', invitationHandler);
