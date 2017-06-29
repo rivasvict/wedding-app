@@ -43,6 +43,7 @@ src/temp/*
 
 # IDE/Editor data
 .idea
+*.iml
 
 # vim temporal file
 *.swp
