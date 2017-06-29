@@ -1,9 +1,9 @@
-require('dotenv').config();
+var dotenv = require('dotenv').config();
 
 const config = {
   database: {
-    client: 'pg',
-    version: '9.5',
+    client: process.env.DATABASE_DIALECT,
+    version: process.env.DATABASE_VERSION,
     connection: {
       host: process.env.DATABASE_HOST,
       user: process.env.DATABASE_USER,

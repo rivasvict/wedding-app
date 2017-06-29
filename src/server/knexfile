@@ -1,0 +1,9 @@
+var config = require('./config.js');
+
+var knexConfig = {
+  development: config.database,
+  staging: config.database,
+  production: config.database,
+}
+
+module.exports = knexConfig;
