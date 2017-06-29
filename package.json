@@ -5,7 +5,10 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1,",
-    "migrations": "knex --knexfile=src/server/knexfile migrate:latest"
+    "migrations": "knex --knexfile=src/server/knexfile migrate:latest",
+    "seed-dev": "knex --knexfile=src/server/knexfile seed:run",
+    "clean-db" : "src/server/./cleandb.sh",
+    "set-dev-db": "npm run clean-db; npm run migrations; npm run seed-dev"
   },
   "repository": {
     "type": "git",
