@@ -7,11 +7,12 @@ class InvitationModel {
   }
 
   confirmGuests(guests, invitationId) {
-    const gustsConfirmationPromises = guests.map(guest => {
+    const guestsConfirmationPromises = [ this.setAllConfirmationForAnInvitationToFalse(invitationId), ...guests
+      .map(guest => {
       return this.confirmSingleGuest(guest, invitationId);
-    });
+    }) ]
 
-    return Promise.all(gustsConfirmationPromises);
+    return Promise.all(guestsConfirmationPromises);
   }
 
   confirmSingleGuest(name, invitationId) {
@@ -24,6 +25,17 @@ class InvitationModel {
         confirmed: true
       })
   }
+
+  setAllConfirmationForAnInvitationToFalse(invitationId) {
+    return knex('guest')
+      .where({
+        invitation_id: invitationId
+      })
+      .update({
+        confirmed: false
+      });
+  }
+
 } 
 
 module.exports = InvitationModel;
