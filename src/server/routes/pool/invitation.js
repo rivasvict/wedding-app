@@ -20,7 +20,15 @@ const invitationRoutes = express => {
       });
   }
 
+  const getGuestsNamesBasedOnInvitation = (req, res) => {
+    const invitationId = req.params.invitationId;
+    invitationController.getGuestsBasedOnInvitation(invitationId)
+      .then(guests => res.status(200).send(guests))
+      .catch(error => res.status(500).send(error.stack));
+  }
+
   router.post(invitationRoutesBaseUri + 'confirm', confirmInvitation);
+  router.get(invitationRoutesBaseUri + 'getGuests/:invitationId', getGuestsNamesBasedOnInvitation);
 
   return router;
 }

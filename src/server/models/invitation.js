@@ -1,6 +1,7 @@
 'use strict';
 
 const knex = require('./../knex.js');
+const guest = 'guest';
 
 class InvitationModel {
   constructor() {
@@ -16,7 +17,7 @@ class InvitationModel {
   }
 
   confirmSingleGuest(name, invitationId) {
-    return knex('guest')
+    return knex(guest)
       .where({
         name,
         invitation_id: invitationId
@@ -27,13 +28,21 @@ class InvitationModel {
   }
 
   setAllConfirmationForAnInvitationToFalse(invitationId) {
-    return knex('guest')
+    return knex(guest)
       .where({
         invitation_id: invitationId
       })
       .update({
         confirmed: false
       });
+  }
+
+  getAllGuestsBasedOnInvitation(invitationId) {
+    return knex(guest)
+      .where({
+        invitation_id: invitationId
+      })
+      .select('name', 'id', 'confirmed');
   }
 
 } 
