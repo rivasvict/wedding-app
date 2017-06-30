@@ -1,4 +1,5 @@
 'use strict';
+
 const InvitationModel = require('./../../models/invitation.js');
 
 class InvitationController {
