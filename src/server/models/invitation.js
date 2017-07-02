@@ -45,6 +45,14 @@ class InvitationModel {
       .select('name', 'id', 'confirmed');
   }
 
+  getNumberOfConfirmedGuests() {
+    return knex(guest)
+      .where({
+        confirmed: true
+      })
+      .count()
+  }
+
 } 
 
 module.exports = InvitationModel;

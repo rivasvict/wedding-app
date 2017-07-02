@@ -14,6 +14,10 @@ class InvitationController {
   getGuestsBasedOnInvitation(invitationId) {
     return this.model.getAllGuestsBasedOnInvitation(invitationId)
   }
+
+  getNumberOfConfirmedGuests() {
+    return this.model.getNumberOfConfirmedGuests();
+  }
 }
 
 module.exports = InvitationController;

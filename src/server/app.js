@@ -5,6 +5,8 @@ const app               = express();
 const PORT              = 3000;
 const invitationRoute   = require('./routes/pool/invitation.js');
 const bodyParser        = require('body-parser'); 
+const Response          = require('./util/responseData.js');
+const response          = new Response();
 
 app.use((req, res, next) => {
   console.log(req.url);
@@ -14,6 +16,8 @@ app.use((req, res, next) => {
 app.use(bodyParser.urlencoded({extended: true}));
 app.use(bodyParser.json());
 app.use(invitationRoute(express));
+
+app.use('/api/*', response.afterGetRoute.bind(response));
 
 app.listen(PORT, () => {
   console.log('Express running  on port: ' + PORT);
