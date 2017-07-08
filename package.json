@@ -9,7 +9,14 @@
     "seed-dev": "knex --knexfile=src/server/knexfile seed:run",
     "clean-db": "src/server/./cleandb.sh",
     "set-dev-db": "npm run clean-db; npm run migrations; npm run seed-dev",
-    "serve-dev" : "nodemon src/server/app.js"
+    "serve-dev": "nodemon src/server/app.js",
+    "dev-setup": "chmod +x setup.sh; ./setup.sh",
+    "use-node-version": "nvm use",
+    "build-watch": "webpack --watch --config webpack.config.js",
+    "compile-sass": "sass --watch src/client/styles/sass:src/client/styles/css",
+    "babel-transpile": "babel --watch src/client/app -d src/client/precompiled-dist",
+    "build-babel": "babel src/client/app -d src/client/precompiled-dist",
+    "start": "concurrently --kill-others \"npm run babel-transpile\" \"npm run compile-sass\" \"npm run build-watch\" \"http-server src/client/ -p 9000\""
   },
   "repository": {
     "type": "git",
@@ -26,13 +33,34 @@
   },
   "homepage": "https://github.com/vctr90/wedding-app#readme",
   "dependencies": {
+    "babel": "^6.23.0",
     "body-parser": "^1.17.2",
+    "bootstrap": "^3.3.7",
     "dotenv": "^4.0.0",
     "express": "^4.15.3",
+    "http-server": "^0.10.0",
+    "jquery": "^3.2.1",
     "knex": "^0.13.0",
     "pg": "^6.4.0"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0"
+    "nodemon": "^1.11.0",
+    "babel-cli": "^6.24.1",
+    "babel-polyfill": "^6.23.0",
+    "babel-preset-env": "^1.5.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-es2017": "^6.24.1",
+    "before-build-webpack": "^0.1.0",
+    "bootstrap-loader": "^2.1.0",
+    "bootstrap-sass": "^3.3.7",
+    "clean-dir": "^1.0.3",
+    "concurrently": "^3.4.0",
+    "css-loader": "^0.28.4",
+    "node-sass": "^4.5.3",
+    "resolve-url-loader": "^2.0.3",
+    "sass-loader": "^6.0.6",
+    "style-loader": "^0.18.2",
+    "url-loader": "^0.5.9",
+    "webpack": "^2.6.1"
   }
 }
