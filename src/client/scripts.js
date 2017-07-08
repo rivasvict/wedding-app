@@ -13,3 +13,4 @@ require('bootstrap-loader');
 // require(sourceDirectoryForCssDependencies + 'test.css');
 // require(sourceDirectoryForCssDependencies + 'test.css');
 // Example of how to bring js dependencies
+require(sourceDirectoryForJsDependencies + 'mainAppLoader.js');
