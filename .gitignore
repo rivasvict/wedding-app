@@ -57,3 +57,8 @@ src/scripts.min.js
 
 # Ignore dev build
 scripts.min.js
+
+# Source map files and styles
+*.css.map
+.sass-cache/
+src/client/styles/css/*.css
