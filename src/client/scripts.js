@@ -15,4 +15,6 @@ require(sourceDirectoryForCssDependencies + 'styles.css');
 // require(sourceDirectoryForCssDependencies + 'test.css');
 // Example of how to bring js dependencies
 require(sourceDirectoryForJsDependencies + 'mainAppLoader.js');
-
+require(sourceDirectoryForJsDependencies + 'modules/connection.js');
+require(sourceDirectoryForJsDependencies + 'modules/endpointBases.js');
+require(sourceDirectoryForJsDependencies + 'modules/Invitation.js');
