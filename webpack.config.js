@@ -14,14 +14,15 @@ module.exports = {
   plugins: [
     new webpack.ProvidePlugin({
       $: "jquery",
-      jQuery: "jquery"
+      jQuery: "jquery",
+      ScrollReveal: "ScrollReveal"
     }),
     new WebpackBeforeBuildPlugin((compiler, continueCompilation) => {
       cleandir('./src/client/dist', error => console.log(error));
       cleandir('./src/client/styles/css', error => console.log(error));
       cleandir('./src/client/precompiled-dist', error => console.log(error));
       continueCompilation();
-    })
+    }),
   ],
   module: {
     loaders: [
@@ -29,7 +30,9 @@ module.exports = {
       {
         test: /\.woff($|¿)|\.woff2($|¿)|\.ttf($|¿)|\.eot($|¿)|\.svg($|¿)/,
         loader: "url-loader"
-      }
+      },
+      { test: require.resolve('jquery'), loader: 'expose-loader?jQuery!expose-loader?$' }/*,
+      { test: require.resolve('scrollreveal'), loader: 'expose-loader?ScrollReveal!ScrollReveal' }*/
     ]
   }
 };
