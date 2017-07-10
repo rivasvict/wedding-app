@@ -63,4 +63,4 @@ scripts.min.js
 .sass-cache/
 src/client/styles/css/*.css
 
-src/client/styles/fonts/*
+# src/client/styles/fonts/*
