@@ -27,15 +27,36 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.css$/, loader: "style-loader!css-loader!resolve-url-loader" },
-      {
+      /*{
         test: /\.woff($|¿)|\.woff2($|¿)|\.ttf($|¿)|\.eot($|¿)|\.svg($|¿)/,
         loader: "url-loader"
-      },
+      },*/
       {
         test: /\.jpg$/, 
         loader: "file-loader" 
       },
-      { test: require.resolve('jquery'), loader: 'expose-loader?jQuery!expose-loader?$' }
+      { test: require.resolve('jquery'), loader: 'expose-loader?jQuery!expose-loader?$' },
+      {
+        test: /\.woff(2)?(¿v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "url-loader?limit=10000&mimetype=application/font-woff",
+        options: {
+          name: 'styles/fonts/[name].[ext]',
+            publicPath: function(url) {
+            return url.replace(/styles/, '..')
+          }
+        }
+      },
+      {
+        test: /\.(ttf|eot|svg)(¿v=[0-9]\.[0-9]\.[0-9])?$/,
+        loader: "file-loader",
+        options: {
+          name: 'styles/fonts/[name].[ext]',
+            publicPath: function(url) {
+            return url.replace(/styles/, '..')
+          }
+        }
+      }
+      //{ test: /\.woff(2)?(¿v=[0-9]\.[0-9]\.[0-9])?$/, loader: "url-loader?limit=10000&file?name=./src/client/styles/fonts/mimetype=application/font-woff" },
     ]
   }
 };

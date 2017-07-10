@@ -8,6 +8,9 @@ var nodeModules = './../node_modules/';
 //require(nodeModules + 'jquery/dist/jquery.min.js');
 //require(nodeModules + 'bootstrap/dist/css/bootstrap.min.css');
 require('bootstrap-loader');
+require('font-awesome/css/font-awesome.min.css');
+//require("font-awesome-loader");
+
 //require(sourceDirectoryForCssDependencies + 'styles.css');
 require(sourceDirectoryForCssDependencies + 'theme.css');
 
