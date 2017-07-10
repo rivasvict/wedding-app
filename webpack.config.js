@@ -26,13 +26,16 @@ module.exports = {
   ],
   module: {
     loaders: [
-      { test: /\.css$/, loader: "style-loader!css-loader" },
+      { test: /\.css$/, loader: "style-loader!css-loader!resolve-url-loader" },
       {
         test: /\.woff($|¿)|\.woff2($|¿)|\.ttf($|¿)|\.eot($|¿)|\.svg($|¿)/,
         loader: "url-loader"
       },
-      { test: require.resolve('jquery'), loader: 'expose-loader?jQuery!expose-loader?$' }/*,
-      { test: require.resolve('scrollreveal'), loader: 'expose-loader?ScrollReveal!ScrollReveal' }*/
+      {
+        test: /\.jpg$/, 
+        loader: "file-loader" 
+      },
+      { test: require.resolve('jquery'), loader: 'expose-loader?jQuery!expose-loader?$' }
     ]
   }
 };

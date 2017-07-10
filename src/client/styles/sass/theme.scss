@@ -146,6 +146,13 @@ aside {
     color: #F05F40;
   }
 }
+.main-container {
+  height: 100%;
+  #wrapper {
+    height: 100%;
+  }
+}
+
 header {
   position: relative;
   width: 100%;
@@ -155,7 +162,7 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  /* background-image: url('../../assets/img/header.jpg'); */
+  background-image: url('/assets/img/header.jpg');
   text-align: center;
   color: white;
 }
