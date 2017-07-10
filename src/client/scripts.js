@@ -3,21 +3,14 @@ var sourceDirectoryForCssDependencies = './styles/css/';
 var nodeModules = './../node_modules/';
 
 // CSS third party libraries
-//require(nodeModules + 'bootstrap/dist/css/bootstrap.min.css');
-
-//require(nodeModules + 'jquery/dist/jquery.min.js');
-//require(nodeModules + 'bootstrap/dist/css/bootstrap.min.css');
 require('bootstrap-loader');
 require('font-awesome/css/font-awesome.min.css');
-//require("font-awesome-loader");
+require('magnific-popup/dist/magnific-popup.css');
 
-//require(sourceDirectoryForCssDependencies + 'styles.css');
+// Local css
 require(sourceDirectoryForCssDependencies + 'theme.css');
 
-// Example of how to bring css dependencies
-// require(sourceDirectoryForCssDependencies + 'test.css');
-// require(sourceDirectoryForCssDependencies + 'test.css');
-// Example of how to bring js dependencies
+// Local js dependencies
 require(sourceDirectoryForJsDependencies + 'mainAppLoader.js');
 require(sourceDirectoryForJsDependencies + 'modules/connection.js');
 require(sourceDirectoryForJsDependencies + 'modules/endpointBases.js');

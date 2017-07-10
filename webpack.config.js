@@ -27,10 +27,6 @@ module.exports = {
   module: {
     loaders: [
       { test: /\.css$/, loader: "style-loader!css-loader!resolve-url-loader" },
-      /*{
-        test: /\.woff($|¿)|\.woff2($|¿)|\.ttf($|¿)|\.eot($|¿)|\.svg($|¿)/,
-        loader: "url-loader"
-      },*/
       {
         test: /\.jpg$/, 
         loader: "file-loader" 
