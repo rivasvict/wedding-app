@@ -62,3 +62,5 @@ scripts.min.js
 *.css.map
 .sass-cache/
 src/client/styles/css/*.css
+
+src/client/styles/fonts/*
