@@ -15,7 +15,8 @@ const invitationRoutes = express => {
     // const guests = JSON.parse(req.body.guests);
     // Current implementation
     let guestIds = req.body.guestIds;
-    guestIds = typeof(guestIds) === 'array' ? guestIds : [ guestIds ];
+    guestIds = guestIds === undefined ? [] : guestIds;
+    guestIds = typeof(guestIds) === 'object' ? guestIds : [ guestIds ];
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
     invitationController.confirmGuests(guestIds, req.body.invitationId)
       .then(() => {
