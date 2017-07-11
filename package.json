@@ -50,6 +50,7 @@
     "less": "^2.7.2",
     "magnific-popup": "^1.1.0",
     "pg": "^6.4.0",
+    "query-string": "^4.3.4",
     "scrollreveal": "^3.3.6"
   },
   "devDependencies": {
