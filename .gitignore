@@ -37,7 +37,7 @@ src/styles/css/*
 
 # Ignore all generated js
 src/precompiled-dist/*
-# src/client/precompiled-dist/*
+src/client/precompiled-dist/*
 
 # Built directories
 src/temp/*
