@@ -22,6 +22,26 @@
     getGuests() {
       return this.guests;
     }
+
+    setGuests(guests) {
+      this.guests = guests;
+    }
+
+    handleConfirmation(guests) {
+      return new Promise((resolve, reject) => {
+        this.controller.handleConfirmation(guests)
+          .then(response => {
+            resolve(response);
+          })
+          .catch(error => reject(error));
+      });
+    }
+
+    getConfirmedGuestsFromKeys(referenceAsObject) {
+      return Object.keys(referenceAsObject);
+    }
+
+    /* TODO: REMEMBER TO SYNCRONIZE GUESTS IN LOCAL AFTER SUCCESS HANDLIN */
   }
 
   module.exports = Invitation;

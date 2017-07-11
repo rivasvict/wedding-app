@@ -16,8 +16,6 @@ app.use((req, res, next) => {
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
-app.use(invitationRoute(express));
-app.use(commentRoute(express));
 
 app.use('/api/*', (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*");
@@ -25,6 +23,9 @@ app.use('/api/*', (req, res, next) => {
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
   next();
 });
+
+app.use(invitationRoute(express));
+app.use(commentRoute(express));
 
 app.use('/api/*', response.afterGetRoute.bind(response));
 

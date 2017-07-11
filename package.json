@@ -45,6 +45,7 @@
     "http-server": "^0.10.0",
     "imports-loader": "^0.7.1",
     "jquery": "^3.2.1",
+    "jquery-serializejson": "^2.8.1",
     "jquery.easing": "^1.4.1",
     "knex": "^0.13.0",
     "less": "^2.7.2",

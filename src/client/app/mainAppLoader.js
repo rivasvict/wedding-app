@@ -3,6 +3,7 @@
   const ConfirmationHandler = require('./modules/markupControllers/confirmation.js')
   const $mainContainer = $('.main-container');
   const Invitation = require('./models/Invitation.js');
+  require('jquery-serializejson');
 
   const urlParams = queryString.parse(location.search);
   const invitationId = urlParams.invitationId;
