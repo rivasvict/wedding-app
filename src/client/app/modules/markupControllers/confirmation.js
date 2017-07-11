@@ -42,7 +42,7 @@
      * This needs to be changed to use id instead of name
      */
     getCheckboxTemplate({ name, id }) {
-      const checkboxTemplate = '<input type="checkbox" class="col-xs-6 row" name="' + name + '"><label class="col-xs-6" for="' + name + '">' + name + '</label>';
+      const checkboxTemplate = '<input type="checkbox" class="col-xs-6 row" name="' + id + '"><label class="col-xs-6" for="' + id + '">' + name + '</label>';
       return $(checkboxTemplate);
     }
 
@@ -53,6 +53,7 @@
     handleGuestsConfirmation() {
       const confirmedFromForm = this.$form.serializeJSON();
       const confirmedGuests = this.model.getConfirmedGuestsFromKeys(confirmedFromForm);
+      debugger;
 
       this.model.handleConfirmation(confirmedGuests)
         .then(response => this.$modal.modal('hide'))

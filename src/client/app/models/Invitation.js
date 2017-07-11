@@ -27,9 +27,9 @@
       this.guests = guests;
     }
 
-    handleConfirmation(guests) {
+    handleConfirmation(guestIds) {
       return new Promise((resolve, reject) => {
-        this.controller.handleConfirmation(guests)
+        this.controller.handleConfirmation(guestIds)
           .then(response => {
             resolve(response);
           })

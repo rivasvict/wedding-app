@@ -14,10 +14,10 @@
       return this.get(`getGuests/${this.invitationId}`);
     }
 
-    handleConfirmation(guests) {
+    handleConfirmation(guestIds) {
       return this.post(`confirm`, {
         'invitationId': this.invitationId,
-        'guests': guests
+        'guestIds': guestIds
       });
     }
 

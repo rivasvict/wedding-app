@@ -7,8 +7,8 @@ class InvitationController {
     this.model = new InvitationModel();
   }
 
-  confirmGuests(guests, invitationId) {
-    return this.model.confirmGuests(guests, invitationId);
+  confirmGuests(guestIds, invitationId) {
+    return this.model.confirmGuests(guestIds, invitationId);
   }
 
   getGuestsBasedOnInvitation(invitationId) {

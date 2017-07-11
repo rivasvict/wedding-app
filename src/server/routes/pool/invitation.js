@@ -14,11 +14,10 @@ const invitationRoutes = express => {
     // If you want to test from postman
     // const guests = JSON.parse(req.body.guests);
     // Current implementation
-    let guests = req.body.guests;
-    guests = typeof(guests) === 'array' ? guests : [ guests ];
+    let guestIds = req.body.guestIds;
+    guestIds = typeof(guestIds) === 'array' ? guestIds : [ guestIds ];
     // >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-    console.log(req.body.guests);
-    invitationController.confirmGuests(guests, req.body.invitationId)
+    invitationController.confirmGuests(guestIds, req.body.invitationId)
       .then(() => {
         res.status(200).send('OK');
       })
