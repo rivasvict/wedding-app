@@ -7,19 +7,19 @@ class InvitationModel {
   constructor() {
   }
 
-  confirmGuests(guests, invitationId) {
-    const guestsConfirmationPromises = [ this.setAllConfirmationForAnInvitationToFalse(invitationId), ...guests
-      .map(guest => {
-      return this.confirmSingleGuest(guest, invitationId);
+  confirmGuests(guestIds, invitationId) {
+    const guestsConfirmationPromises = [ this.setAllConfirmationForAnInvitationToFalse(invitationId), ...guestIds
+      .map(guestId => {
+      return this.confirmSingleGuest(guestId, invitationId);
     }) ]
 
     return Promise.all(guestsConfirmationPromises);
   }
 
-  confirmSingleGuest(name, invitationId) {
+  confirmSingleGuest(guestId, invitationId) {
     return knex(guest)
       .where({
-        name,
+        id: guestId,
         invitation_id: invitationId
       })
       .update({
