@@ -8,7 +8,8 @@ const axios = require('axios');
 const api = axios.create({
   baseURL: CONNECTION_STRING,
   headers: {
-    'Content-Type': 'application/x-www-form-urlencoded'
+    'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
+    'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'
   }
 });
 const querystring = require('querystring');
