@@ -1,58 +1,42 @@
+'use-strict';
 (() => {
-  const CommentController = require('./../modules/Controller.js');
+  const Connection = require('./../modules/connection.js');
+  const endpointBases = require('./../modules/endpointBases.js');
+  const base = endpointBases.invitation;
 
-  class Invitation {
+  class Comment extends Connection {
     constructor({ invitationId }) {
+      super(endpointBases.comment);
       this.invitationId = invitationId;
-      this.comment = '';
-      this.controller = new CommentController({ invitationId });
     }
 
-    fetchComment() {
-      return new Promise((resolve, reject) => {
-        this.controller.getCommentByInvitationId()
-          .then(response => {
-            this.comment = response.data.data;
-            resolve(response);
-          })
-          .catch(error => reject(error));
-      });
-    }
-
-    getComment() {
-      return this.comment;
-    }
-
-    setGuests(comment) {
-      this.comment = comment;
+    getCommentByInvitationId() {
+      return this.get(`getCommentByInvitationId/${this.invitationId}`);
     }
 
     postComment(comment) {
-      return new Promise((resolve, reject) => {
-        this.controller.postComment(comment)
-          .then(response => {
-            this.synchrinizeCommentWithLocal(comment);
-            resolve(response);
-          })
-          .catch(error => reject(error));
+      return this.post(`postComment`, {
+        comment,
+        invitationId: this.invitationId,
       });
     }
-
-    synchrinizeCommentWithLocal(comment) {
-      this.setCommentToDefaultState();
-      this.updateCommentLocally(comment);
-    }
-
-    setCommentToDefaultState() {
-      this.comment = '';
-    }
-
-    updateCommentLocally(comment) {
-      this.guests = comment;
-    }
-
   }
 
-  module.exports = Invitation;
-})();
+  module.exports = Comment;
 
+  /*
+  const myNewComment = new Comment({
+    invitationId: 'weijd12'
+  });
+
+   * USAGE
+  myNewComment.getCommentByInvitationId()
+    .then(guestResponse => console.log(commentResponse))
+    .catch(error => console.log(error));
+  myNewComment.getCommentByInvitationId({
+    comment: 'testComment'
+  })
+    .then(guestResponse => console.log(commentResponse))
+    .catch(error => console.log(error));
+  */
+})();

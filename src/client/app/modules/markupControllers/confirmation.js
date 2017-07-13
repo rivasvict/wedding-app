@@ -1,5 +1,5 @@
 (() => {
-  class markupConfirmationHandler {
+  class MarkupConfirmationHandler {
     constructor({ model }) {
       this.defineModels(model);
       this.defineMarkup();
@@ -73,5 +73,5 @@
     }
   }
 
-  module.exports = markupConfirmationHandler;
+  module.exports = MarkupConfirmationHandler;
 })()
