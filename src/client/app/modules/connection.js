@@ -1,12 +1,9 @@
 'use-strict'
 
-const SERVER = 'http://localhost';
-const PORT = '3000';
-const API = '/api/';
-const CONNECTION_STRING = `${SERVER}:${PORT}${API}`
 const axios = require('axios');
+const API = '/api/';
 const api = axios.create({
-  baseURL: CONNECTION_STRING,
+  baseURL: API,
   headers: {
     'Accept': 'application/json, application/xml, text/plain, text/html, *.*',
     'Content-Type': 'application/x-www-form-urlencoded; charset=UTF-8'

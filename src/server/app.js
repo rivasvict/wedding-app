@@ -28,6 +28,7 @@ app.use(invitationRoute(express));
 app.use(commentRoute(express));
 
 app.use('/api/*', response.afterGetRoute.bind(response));
+app.use('/', express.static('./src/client/'));
 
 app.listen(PORT, () => {
   console.log('Express running  on port: ' + PORT);

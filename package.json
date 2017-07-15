@@ -9,14 +9,14 @@
     "seed-dev": "knex --knexfile=src/server/knexfile seed:run",
     "clean-db": "src/server/./cleandb.sh",
     "set-dev-db": "npm run clean-db; npm run migrations; npm run seed-dev",
-    "serve-dev": "nodemon src/server/app.js",
+    "start": "nodemon src/server/app.js",
     "dev-setup": "chmod +x setup.sh; ./setup.sh",
     "use-node-version": "nvm use",
     "build-watch": "webpack --watch --config webpack.config.js",
     "compile-sass": "sass --watch src/client/styles/sass:src/client/styles/css",
     "babel-transpile": "babel --watch src/client/app -d src/client/precompiled-dist",
     "build-babel": "babel src/client/app -d src/client/precompiled-dist",
-    "start": "concurrently --kill-others \"npm run babel-transpile\" \"npm run compile-sass\" \"npm run build-watch\" \"http-server src/client/ -p 9000\""
+    "serve-dev": "concurrently --kill-others \"npm run babel-transpile\" \"npm run compile-sass\" \"npm run build-watch\" \"npm run start\""
   },
   "repository": {
     "type": "git",
@@ -43,7 +43,6 @@
     "express": "^4.15.3",
     "file-loader": "^0.11.2",
     "font-awesome": "^4.7.0",
-    "http-server": "^0.10.0",
     "imports-loader": "^0.7.1",
     "jquery": "^3.2.1",
     "jquery-serializejson": "^2.8.1",
