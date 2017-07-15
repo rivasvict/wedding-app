@@ -495,10 +495,16 @@ section#about {
     color: $color-header-menu-items-after-scroll-selected;
 }
 
-// #bs-example-navbar-collapse-1 {
-#mainNav > .container-fluid {
-  background: rgba(0, 0, 0, 0.6);
-  color: white;
+/* container color change only applies on wide mode */
+@media (max-width: 768px) { 
+  #mainNav > .container-fluid {
+    background: transparent;
+    color: white;
+  }
+  
+  .navbar-default { 
+    background-color: white;
+  }
 }
 
 .header-content-inner-heart {
