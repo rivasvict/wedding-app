@@ -427,6 +427,7 @@ $color-header-brand: #286090;
 $color-header-brand-hover: #716565;
 $color-header-menu-items-hover: #808080;
 $color-header-menu-items-after-scroll-selected: #105882;
+$color-header-hamburger-button-background: #ddd;
 
 $color-confirmation-button-default-background: #1ea6c5;
 $color-confirmation-button-default-background-hover: #105882;
@@ -441,6 +442,12 @@ section#about {
 
 .navbar-default {
   background-color: $color-header-background-non-scrolled-state;
+}
+
+.navbar-default .navbar-header .navbar-brand,
+.navbar-default .navbar-header .navbar-brand:hover, 
+.navbar-default .navbar-header .navbar-brand:focus {
+    color: $color-header-brand;
 }
 
 .navbar-default.affix .navbar-header .navbar-brand {
@@ -458,6 +465,40 @@ section#about {
 /* menu current section after scroll */
 .navbar-default .nav > li.active > a {
   color: $color-header-menu-items-after-scroll-selected;
+}
+
+.navbar-default .navbar-toggle {
+  background: $color-header-hamburger-button-background;
+}
+
+/* menu link color on click instant */
+@media (min-width: 768px) {
+  .navbar-default.affix .nav > li > a:hover, 
+  .navbar-default.affix .nav > li > a:focus:hover {
+      color: $color-header-menu-items-after-scroll-selected;
+  }  
+}
+
+@media (max-width: 768px) {
+  .navbar-default .nav > li > a {
+      color: white;
+  }
+}
+
+/* color for menu items, particularly on mobile mode */
+.navbar-default .nav > li > a:hover, 
+.navbar-default .nav > li > a:focus,
+.navbar-default .nav > li > a:focus:hover,
+.navbar-default .nav > li.active > a:hover, 
+.navbar-default .nav > li.active > a:focus,
+.navbar-default .nav > li.active > a:focus:hover  {
+    color: $color-header-menu-items-after-scroll-selected;
+}
+
+// #bs-example-navbar-collapse-1 {
+#mainNav > .container-fluid {
+  background: rgba(0, 0, 0, 0.6);
+  color: white;
 }
 
 .header-content-inner-heart {
