@@ -421,3 +421,44 @@ img::-moz-selection {
 body {
   webkit-tap-highlight-color: #222222;
 }
+
+$color-header-background-non-scrolled-state: rgba(0, 0, 0, 0.39);
+$color-header-brand: #286090;
+$color-header-brand-hover: #716565;
+$color-header-menu-items-hover: #808080;
+
+$color-confirmation-button-default-background: #1ea6c5;
+$color-confirmation-button-font: #404040;
+$color-section-about-background: #1ea6c5;
+
+section#about {
+  background-color: $color-section-about-background;
+} 
+
+.navbar-default {
+  background-color: $color-header-background-non-scrolled-state;
+}
+
+.navbar-default.affix .navbar-header .navbar-brand {
+  color: $color-header-brand;
+}
+
+.navbar-default.affix .navbar-header .navbar-brand:hover {
+  color: $color-header-brand-hover;
+}
+
+.navbar-default.affix .nav > li > a:hover {
+  color: $color-header-brand-hover;
+}
+
+.header-content-inner-heart {
+  color: red;
+  font-size: 48px;
+  margin-top: 6px;
+  margin-bottom: 6px;
+}
+
+.confirmation-button {
+  background-color: $color-confirmation-button-default-background;
+  color: $color-confirmation-button-font;
+}
