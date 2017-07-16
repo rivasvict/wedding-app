@@ -479,9 +479,10 @@ section#about {
   }  
 }
 
+/* color for menu link on mobile menu, defaults to gray */
 @media (max-width: 768px) {
   .navbar-default .nav > li > a {
-      color: white;
+      /* color: white; */
   }
 }
 
