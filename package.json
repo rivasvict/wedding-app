@@ -23,7 +23,7 @@
     "build-webpack": "webpack --config webpack.config.js",
     "ugglify": "uglifyjs src/client/scripts.min.js --output src/client/scripts.min.js",
     "build": "run-s clean-temporal-directories babel sass build-webpack ugglify",
-    "serve-production": "run-s build start",
+    "serve-production": "run-s build start"
   },
   "repository": {
     "type": "git",
