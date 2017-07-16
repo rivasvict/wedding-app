@@ -9,6 +9,7 @@ sudo npm install -g nvm
 nvm install
 nvm use
 npm install --global webpack
+chmod +x scripts/cleanTemporalDirectories.sh
 mkdir src/client
 mkdir src/client/app
 mkdir src/client/styles
