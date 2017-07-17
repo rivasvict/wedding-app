@@ -8,7 +8,7 @@
     "migrations": "knex --knexfile=src/server/knexfile migrate:latest",
     "seed-dev": "knex --knexfile=src/server/knexfile seed:run",
     "clean-db": "src/server/./cleandb.sh",
-    "set-dev-db": "npm run clean-db; npm run migrations; npm run seed-dev",
+    "set-db": "npm run clean-db; npm run migrations; npm run seed-dev",
     "start": "nodemon src/server/app.js",
     "dev-setup": "chmod +x setup.sh; ./setup.sh",
     "use-node-version": "nvm use",
@@ -23,6 +23,8 @@
     "build-webpack": "webpack --config webpack.config.js",
     "ugglify": "uglifyjs src/client/scripts.min.js --output src/client/scripts.min.js",
     "build": "run-s clean-temporal-directories babel sass build-webpack ugglify",
+    "configure-db": "./configure-wedding-db.js",
+    "configure-db-environment": "run-s configure-db clean-db set-db",
     "serve-production": "run-s build start"
   },
   "repository": {
