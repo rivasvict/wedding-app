@@ -5,6 +5,7 @@ const app               = express();
 const PORT              = 3000;
 const invitationRoute   = require('./routes/pool/invitation.js');
 const commentRoute      = require('./routes/pool/comments.js');
+const emailRoute        = require('./routes/pool/email.js');
 const bodyParser        = require('body-parser'); 
 const Response          = require('./util/responseData.js');
 const response          = new Response();
@@ -26,6 +27,7 @@ app.use('/api/*', (req, res, next) => {
 
 app.use(invitationRoute(express));
 app.use(commentRoute(express));
+app.use(emailRoute(express));
 
 app.use('/api/*', response.afterGetRoute.bind(response));
 app.use('/', express.static('./src/client/'));

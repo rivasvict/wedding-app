@@ -2,6 +2,7 @@
 
 const knex = require('./../knex.js');
 const guest = 'guest';
+const invitations = 'invitations';
 
 class InvitationModel {
   constructor() {
@@ -51,6 +52,25 @@ class InvitationModel {
         confirmed: true
       })
       .count()
+  }
+
+  getAllNonSentInvitations() {
+    return knex(invitations)
+      .where({
+        sent: false,
+        can_be_used: true
+      })
+      .select('complete_name', 'email', 'id');
+  }
+
+  setInvitationToSent(invitationId) {
+    return knex(invitations)
+      .where({
+        id: invitationId
+      })
+      .update({
+        sent: true
+      });
   }
 
 } 
