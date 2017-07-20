@@ -162,7 +162,6 @@ header {
   background-size: cover;
   -o-background-size: cover;
   background-position: center;
-  background-image: url('/assets/img/header.jpg');
   text-align: center;
   color: white;
 }
@@ -452,6 +451,28 @@ $color-default-blue: #1ea6c5;
                       Sections and common elements
 
 ----------------------------------------------------------------------------- */
+
+/* static image background only shows in mobile */
+@media (max-width: 768px) {
+  header {
+    background-image: url('/assets/img/header.jpg');
+  }  
+}
+
+#header-video-wrapper {
+  
+}
+
+div#header-video-wrapper video#header-video {
+  position: fixed; 
+  top: -185px; 
+  left: 0px; 
+  bottom: 0px; 
+  right: 0px; 
+  z-index: -100; 
+  width: 1352px; 
+  height: 759.906px;
+}
 
 section#about,
 section#nosotros {
