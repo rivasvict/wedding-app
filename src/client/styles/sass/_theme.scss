@@ -422,7 +422,16 @@ body {
   webkit-tap-highlight-color: #222222;
 }
 
+
+/* -----------------------------------------------------------------------------
+
+                                Variables
+
+----------------------------------------------------------------------------- */
+
+
 $color-header-background-non-scrolled-state: rgba(0, 0, 0, 0.39);
+$color-header-brand-desktop: rgba(255, 255, 255, 0.7);
 $color-header-brand: #286090;
 $color-header-brand-hover: #716565;
 $color-header-menu-items-hover: #808080;
@@ -435,10 +444,42 @@ $color-confirmation-button-font: #404040;
 $color-section-about-background: #1ea6c5;
 
 $color-section-images-overlay: rgba(24, 142, 226, 0.68);
+$color-default-orange: #F05F40;
+$color-default-blue: #1ea6c5;
 
-section#about {
+/* -----------------------------------------------------------------------------
+
+                      Sections and common elements
+
+----------------------------------------------------------------------------- */
+
+section#about,
+section#nosotros {
   background-color: $color-section-about-background;
-} 
+}
+
+hr {
+  border-color: $color-default-blue;
+}
+
+.image-base64-suit,
+.image-base64-church {
+  max-width: 4em;
+}
+
+.image-base64-church {
+  
+}
+
+.image-base64-suit {
+  
+}
+
+/* -----------------------------------------------------------------------------
+
+                                 Navbar
+
+----------------------------------------------------------------------------- */
 
 .navbar-default {
   background-color: $color-header-background-non-scrolled-state;
@@ -449,6 +490,15 @@ section#about {
 .navbar-default .navbar-header .navbar-brand:focus {
     color: $color-header-brand;
 }
+
+/* "we're married message" ought to be in a white font on desktop */
+@media (min-width: 768px) { 
+  .navbar-default .navbar-header .navbar-brand,
+  .navbar-default .navbar-header .navbar-brand:hover, 
+  .navbar-default .navbar-header .navbar-brand:focus {
+      color: $color-header-brand-desktop;
+  }
+} 
 
 .navbar-default.affix .navbar-header .navbar-brand {
   color: $color-header-brand;
@@ -508,6 +558,14 @@ section#about {
   }
 }
 
+
+/* -----------------------------------------------------------------------------
+
+                              First section
+
+----------------------------------------------------------------------------- */
+
+
 .header-content-inner-heart {
   color: red;
   font-size: 48px;
@@ -520,11 +578,117 @@ section#about {
   color: $color-confirmation-button-font;
 }
 
+.confirmation-button:focus,
 .confirmation-button:hover {
   background-color: $color-confirmation-button-default-background-hover;
 }
 
+h1#homeHeading .h1-part {
+  display: block;
+  margin-bottom: 12px;
+}
+
+h1#homeHeading .h1-part.first {
+  
+} 
+
+h1#homeHeading .h1-part.names {
+  
+} 
+
+h1#homeHeading .h1-part.date {
+  
+}  
+
+
+/* -----------------------------------------------------------------------------
+
+                   Section: Personal texts (nuestra historia)
+
+----------------------------------------------------------------------------- */
+
+
+.personal-text-column {
+  text-align: left;
+}
+
+.personal-text-column.bride {
+  
+}
+
+.personal-text-column.groom {
+  
+}
+
+.personal-text-column.bride .fa-heart {
+  color: red;
+}
+
+.personal-text-column.groom .fa-heart {
+  color: blue;
+}
+
+
+/* -----------------------------------------------------------------------------
+
+                            Section: Information
+
+----------------------------------------------------------------------------- */
+
+
+.sr-icons {
+  color: $color-default-blue;
+}
+
+.unicode-icon-cross {
+  font-size: 4em;
+  color: $color-default-blue;
+  margin-bottom: -24px;
+  display: inline-block;
+}
+
+section#informacion h2.section-heading {
+  text-align: left;
+  border: 3px solid #1ea6c5;
+  border-width: 0 0 3px 0;
+  max-width: 50px;
+  padding-bottom: 9px;
+}
+
+
+/* -----------------------------------------------------------------------------
+
+                           Section: Image Gallery
+
+----------------------------------------------------------------------------- */
+
+
 /* color overlay on images */
 .portfolio-box .portfolio-box-caption {
   background: $color-section-images-overlay;
+}
+
+/* -----------------------------------------------------------------------------
+
+                            Section: Contact
+
+----------------------------------------------------------------------------- */
+
+.derecha,
+.izquierda {
+  
+}
+
+.comment-container {
+  text-align: center;
+}
+
+.sr-contact {
+  margin-bottom: 16px;
+  color: $color-default-blue;
+}
+
+.comment-box {
+  min-height: 120px;
+  width: 90%;
 }
