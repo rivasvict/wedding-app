@@ -5,12 +5,16 @@ const baseApiUrlPart = '/api';
 
 const routes = {
   invitation: {
-    baseUri:  baseApiUrlPart + '/invitation/',
+    baseUri:  `${baseApiUrlPart}/invitation/`,
     controller: controllers.InvitationController
   },
   comment: {
-    baseUri:  baseApiUrlPart + '/comment/',
+    baseUri:  `${baseApiUrlPart}/comment/`,
     controller: controllers.CommentController
+  },
+  email: {
+    baseUri: `${baseApiUrlPart}/email/`,
+    controller: controllers.EmailController
   }
 
 };
