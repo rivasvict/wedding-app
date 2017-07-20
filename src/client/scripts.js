@@ -8,7 +8,7 @@ require('font-awesome/css/font-awesome.min.css');
 require('magnific-popup/dist/magnific-popup.css');
 
 // Local css
-require(sourceDirectoryForCssDependencies + 'theme.css');
+require(sourceDirectoryForCssDependencies + 'index.css');
 
 // Local js dependencies
 

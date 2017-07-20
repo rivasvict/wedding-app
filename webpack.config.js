@@ -16,13 +16,7 @@ module.exports = {
       $: "jquery",
       jQuery: "jquery",
       ScrollReveal: "ScrollReveal"
-    }),
-    new WebpackBeforeBuildPlugin((compiler, continueCompilation) => {
-      cleandir('./src/client/dist', error => console.log(error));
-      cleandir('./src/client/styles/css', error => console.log(error));
-      cleandir('./src/client/precompiled-dist', error => console.log(error));
-      continueCompilation();
-    }),
+    })
   ],
   module: {
     loaders: [
