@@ -19,5 +19,6 @@ require(sourceDirectoryForJsDependencies + 'modules/endpointBases.js');
 require(sourceDirectoryForJsDependencies + 'modules/markupControllers/confirmation.js');
 require(sourceDirectoryForJsDependencies + 'mainAppLoader.js');
 require(sourceDirectoryForJsDependencies + 'theme/theme.js');
+require('./assets/js/parallax.min.js');
 // This allows us to inject dependencies on the go as if we were writting requests directly on the js file
 //require('imports-loader?ScrollReveal=scrollreveal!./precompiled-dist/theme/theme.js');
