@@ -1,4 +1,5 @@
 'use-strict'
+const moment = require('moment');
 
 class ResponseDataFormatter {
   constructor() {
@@ -7,8 +8,13 @@ class ResponseDataFormatter {
   getFormatResponse(data) {
     return {
       data,
+      date: this.getServerDate(),
       status: 200
     }
+  }
+
+  getServerDate() {
+    return moment().valueOf();
   }
 
   byMiddleware(next, res, data) {
