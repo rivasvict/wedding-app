@@ -41,7 +41,25 @@ const invitationRoutes = express => {
       .catch(error => response.error(res, error));
   }
 
+  const confirmSingleGuest = (req, res, next) => {
+    const invitationId = req.body.invitationId;
+    const guestId = req.body.guestId;
+    invitationController.confirmSingleGuest(guestId, invitationId)
+      .then(() => res.status(200).send('OK'))
+      .catch(error => response.error(res, error));
+  }
+
+  const unConfirmSingleGuest = (req, res, next) => {
+    const invitationId = req.body.invitationId;
+    const guestId = req.body.guestId;
+    invitationController.unConfirmSingleGuest(guestId, invitationId)
+      .then(() => res.status(200).send('OK'))
+      .catch(error => response.error(res, error));
+  }
+
   router.post(invitationRoutesBaseUri + 'confirm', confirmInvitation);
+  router.post(invitationRoutesBaseUri + 'confirmSingleGuest', confirmSingleGuest);
+  router.post(invitationRoutesBaseUri + 'unConfirmSingleGuest', unConfirmSingleGuest);
   router.get(invitationRoutesBaseUri + 'getGuests/:invitationId', getGuestsNamesBasedOnInvitation);
   router.get(invitationRoutesBaseUri + 'getNumberOfConfirmedGuests', getNumberOfConfirmedGuests);
 

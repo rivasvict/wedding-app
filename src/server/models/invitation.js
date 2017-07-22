@@ -38,6 +38,17 @@ class InvitationModel {
       });
   }
 
+  unConfirmSingleGuest(guestId, invitationId) {
+    return knex(guest)
+      .where({
+        id: guestId,
+        invitation_id: invitationId
+      })
+      .update({
+        confirmed: false
+      })
+  }
+
   getAllGuestsBasedOnInvitation(invitationId) {
     return knex(guest)
       .where({

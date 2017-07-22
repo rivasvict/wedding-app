@@ -18,6 +18,15 @@ class InvitationController {
   getNumberOfConfirmedGuests() {
     return this.model.getNumberOfConfirmedGuests();
   }
+
+  confirmSingleGuest(guestId, invitationId) {
+    return this.model.confirmSingleGuest(guestId, invitationId);
+  }
+
+  unConfirmSingleGuest(guestId, invitationId) {
+    return this.model.unConfirmSingleGuest(guestId, invitationId);
+  }
+
 }
 
 module.exports = InvitationController;
