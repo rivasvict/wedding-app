@@ -1,4 +1,6 @@
 (() => {
+  const LoaderSpinner = require('../../modules/LoaderSpinner.js');
+  
   class MarkupCommentHandler {
     constructor({ model }) {
       this.defineModels(model);
@@ -53,10 +55,16 @@
     sendComment() {
       const formData = this.$form.serializeJSON();
       const comment = formData.comment;
+      const loaderSpinner = new LoaderSpinner();
+      loaderSpinner.setText("Enviando comentario, por favor espere...");
+      loaderSpinner.turnOn();
 
       this.model.postComment(comment)
-        .then(response => alert('good comment'))
+        .then(response => {
+          loaderSpinner.turnOff();
+        })
         .catch(error => {
+          loaderSpinner.turnOff()
           reRenderInitialState();
           console.log('error');
           alert('La base de datos no pudo actualizarse, por favor contactar al administrador del sistema');
