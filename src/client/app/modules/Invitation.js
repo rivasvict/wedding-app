@@ -24,6 +24,16 @@
     getNumberOfConfirmedGuests() {
       return this.get(`getNumberOfConfirmedGuests`);
     }
+
+    confirmSingleGuest(guestId) {
+      return this.post(`confirmSingleGuest`, {
+        guestId,
+        invitationId: this.invitationId,
+      });
+    }
+
+    unConfirmSinglueGUest(guestId) {
+    }
   }
 
   module.exports = Invitation;
