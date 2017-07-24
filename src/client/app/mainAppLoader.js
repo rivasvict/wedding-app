@@ -66,6 +66,7 @@
           initializePlugins();
           initializeCustomBehavior();
           initializeCommentBox();
+          initializeParallax();
         }
 
         const initializePlugins = () => {
@@ -79,6 +80,12 @@
 
         const initializeConfirmationFunctionality = () => {
           new ConfirmationHandler({ model: invitation });
+        }
+        
+        const initializeParallax = () => {
+          $('.parallax-window').parallax({
+            imageSrc: 'assets/img/parallax1.jpg'
+          });
         }
 
         activateJsFunctionality();
