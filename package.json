@@ -19,7 +19,7 @@
     "clean-temporal-directories": "scripts/./cleanTemporalDirectories.sh",
     "serve-dev": "run-p clean-temporal-directories babel-transpile compile-sass build-watch start",
     "babel": "babel src/client/app -d src/client/precompiled-dist",
-    "sass": "sass src/client/styles/sass/index.scss src/client/styles/css/index.css src/client/styles/css/cover.scss",
+    "sass": "sass src/client/styles/sass/index.scss src/client/styles/css/index.css",
     "build-webpack": "webpack --config webpack.config.js",
     "ugglify": "uglifyjs src/client/scripts.min.js --output src/client/scripts.min.js",
     "build": "run-s clean-temporal-directories babel sass build-webpack ugglify",

@@ -1,19 +1,19 @@
 (() => {
   class LoaderSpinner {
     constructor() {
-      this.div = $(".cover");
+      this.$cover = $(".cover");
     }
     
     setText(text) {
-      this.div.find(".loader-text").html(text);
+      this.$cover.find(".loader-text").html(text);
     }
 
     turnOn() {
-      this.div.addClass("on");
+      this.$cover.addClass("on");
     }
     
     turnOff() {
-      this.div.removeClass("on");
+      this.$cover.removeClass("on");
     }
   }
 
