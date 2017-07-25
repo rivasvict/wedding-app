@@ -1,0 +1,95 @@
+#mainNav {
+  font-family: $font-potter;
+}
+.navbar-header {
+  .header-star {
+    color: #bfbfbf;
+  }
+
+  .navbar-brand {
+    font-family: $font-potter;
+    padding: 15px 0px;
+  }
+}
+
+.header-content-inner {
+  p {
+    font-size: 1.5em!important;
+  }
+}
+
+#nosotros {
+  .personal-text-column {
+    font-size: 1.5em!important;
+  }
+
+  h2 {
+    font-family: $font-potter;
+  }
+}
+
+#informacion {
+  h2 {
+    font-family: $font-potter;
+  }
+
+  .text-muted {
+    font-size: 1.3em;
+  }
+}
+
+.section-heading {
+  font-family: $font-potter;
+}
+
+#homeHeading {
+  span.first {
+    font-family: $font-corrida;
+  }
+  span.date {
+    font-size: 0.7em;
+    font-family: $font-corrida;
+  }
+
+  span.names {
+    font-family: $font-potter;
+    font-size: 0.8em;
+    color: #bcc0cb;
+  }
+}
+
+#fotos {
+  .project-category {
+    font-family: $font-potter;
+  }
+  .project-name {
+    font-family: $font-potter;
+  }
+}
+
+#comentario {
+  .izquierda {
+    margin-bottom: 15px;
+  }
+}
+
+@media (min-width: 768px) {
+  .navbar-header {
+    .navbar-brand {
+      margin-left: initial!important;
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .navbar-header {
+    .navbar-brand {
+      margin-left: 2%!important;
+    }
+  }
+}
+
+@media (min-width: 992px) {
+}
+@media (min-width: 992px) {
+}

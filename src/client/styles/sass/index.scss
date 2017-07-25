@@ -1,1 +1,13 @@
+$font-potter: 'Bellefair', serif!important;
+$font-corrida: 'Dancing Script', cursive!important;
+
+body {
+  font-family: $font-corrida;
+}
+
+button {
+  font-family: $font-potter;
+}
+@import url('https://fonts.googleapis.com/css?family=Bellefair|Dancing+Script|Indie+Flower|Lemonada|Lobster|Pacifico|Slabo+27px');
 @import 'theme';
+@import 'header';
