@@ -1,7 +1,8 @@
 (() => {
   class LoaderSpinner {
-    constructor() {
+    constructor(text) {
       this.$cover = $(".cover");
+      this.setText(text);
     }
     
     setText(text) {

@@ -59,8 +59,7 @@
     handleGuestsConfirmation() {
       const confirmedFromForm = this.$form.serializeJSON();
       const confirmedGuests = this.model.getConfirmedGuestsFromKeys(confirmedFromForm);
-      const loaderSpinner = new LoaderSpinner();
-      loaderSpinner.setText("Enviando confirmaciones, por favor espere...");
+      const loaderSpinner = new LoaderSpinner("Enviando confirmaciones, por favor espere...");
       loaderSpinner.turnOn();
 
       this.model.handleConfirmation(confirmedGuests)

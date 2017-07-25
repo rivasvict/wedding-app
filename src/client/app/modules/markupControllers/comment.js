@@ -52,11 +52,11 @@
       this.$target.val(this.model.comment);
     }
 
-    sendComment() {
+    sendComment(event) {
       const formData = this.$form.serializeJSON();
       const comment = formData.comment;
-      const loaderSpinner = new LoaderSpinner();
-      loaderSpinner.setText("Enviando comentario, por favor espere...");
+      const loaderSpinner = new LoaderSpinner("Enviando comentario, por favor espere...");
+      event.preventDefault();
       loaderSpinner.turnOn();
 
       this.model.postComment(comment)

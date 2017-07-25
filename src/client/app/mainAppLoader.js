@@ -17,7 +17,7 @@
   const currentInvitation = new Invitation(invitationIdClassReady);
   const comment = new Comment(invitationIdClassReady);
 
-  const loaderSpinner = new LoaderSpinner();
+  const loaderSpinner = new LoaderSpinner("Cargando...");
   loaderSpinner.turnOn();
 
   currentInvitation.fetchGuests()
