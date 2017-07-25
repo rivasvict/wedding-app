@@ -1,4 +1,6 @@
 (() => {
+  const LoaderSpinner = require('../../modules/LoaderSpinner.js');
+  
   class MarkupConfirmationHandler {
     constructor({ model }) {
       this.defineModels(model);
@@ -57,10 +59,16 @@
     handleGuestsConfirmation() {
       const confirmedFromForm = this.$form.serializeJSON();
       const confirmedGuests = this.model.getConfirmedGuestsFromKeys(confirmedFromForm);
+      const loaderSpinner = new LoaderSpinner("Enviando confirmaciones, por favor espere...");
+      loaderSpinner.turnOn();
 
       this.model.handleConfirmation(confirmedGuests)
-        .then(response => this.$modal.modal('hide'))
+        .then(response => {
+          loaderSpinner.turnOff();
+          this.$modal.modal('hide');
+        })
         .catch(error => {
+          loaderSpinner.turnOff();
           reRenderInitialState();
           console.log('error');
           alert('La base de datos no pudo actualizarse, por favor contactar al administrador del sistema');

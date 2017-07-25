@@ -66,3 +66,4 @@ src/client/styles/css/*.css
 
 # Fonts directory form node modules
 src/client/styles/fonts/*
+src/client/assets/video/*

@@ -5,6 +5,7 @@
   const Invitation = require('./models/Invitation.js');
   const MarkupHandlerForComment = require('./modules/markupControllers/comment.js');
   const Comment = require('./models/Comment.js');
+  const LoaderSpinner = require('./modules/LoaderSpinner.js');
   require('jquery-serializejson');
 
   const urlParams = queryString.parse(location.search);
@@ -16,6 +17,9 @@
   const currentInvitation = new Invitation(invitationIdClassReady);
   const comment = new Comment(invitationIdClassReady);
 
+  const loaderSpinner = new LoaderSpinner("Cargando...");
+  loaderSpinner.turnOn();
+
   currentInvitation.fetchGuests()
     .then(response => {
       if (response.data.data.length) {
@@ -23,8 +27,10 @@
       } else {
         alert('Doing nasty stuff eh!');
       }
+      loaderSpinner.turnOff();
     })
     .catch(error => {
+      loaderSpinner.turnOff();
       console.log(error);
     });
 

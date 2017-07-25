@@ -9,6 +9,7 @@ require('magnific-popup/dist/magnific-popup.css');
 
 // Local css
 require(sourceDirectoryForCssDependencies + 'index.css');
+require(sourceDirectoryForCssDependencies + 'cover.css');
 
 // Local js dependencies
 
@@ -16,6 +17,7 @@ require(sourceDirectoryForJsDependencies + 'modules/Invitation.js');
 require(sourceDirectoryForJsDependencies + 'models/Invitation.js');
 require(sourceDirectoryForJsDependencies + 'modules/connection.js');
 require(sourceDirectoryForJsDependencies + 'modules/endpointBases.js');
+require(sourceDirectoryForJsDependencies + 'modules/LoaderSpinner.js');
 require(sourceDirectoryForJsDependencies + 'modules/markupControllers/confirmation.js');
 require(sourceDirectoryForJsDependencies + 'mainAppLoader.js');
 require(sourceDirectoryForJsDependencies + 'theme/theme.js');
