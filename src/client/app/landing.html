@@ -318,6 +318,7 @@
       </div> <!-- container -->
       
     </section>
+    <!-- Assistance confirmation modal -->
     <div class="modal fade bs-example-modal-lg" id="confirmation" tabindex="-1" role="dialog" labelledby="confirmationLabel">
 	<div class="modal-dialog" role="document">
 	    <div class="modal-content">
@@ -334,5 +335,23 @@
 	    </div>
 	</div>
     </div>
+    
+    <!-- Generic success acceptance modal, used by AcceptanceModel.js -->
+    <div class="modal fade bs-example-modal-lg" id="successModal" tabindex="-1" role="dialog" labelledby="successLabel">
+    	<div class="modal-dialog" role="document">
+    	    <div class="modal-content">
+    		<div class="modal-header">
+    		    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    		    <h4 class="modal-title" id="successLabel">La acción ha tenido éxito.</h4>
+    		</div>
+    		<div class="modal-success-body row">
+          <center>
+            <i class="fa fa-check" aria-hidden="true"></i>
+            <p class="success-body-text">Ok</div>
+            <button type="button" class="accept-button btn btn-default" data-dismiss="modal">Aceptar</button>
+          </center>    
+    		</div>
+	    </div>
+  	</div>
 
 </div>
