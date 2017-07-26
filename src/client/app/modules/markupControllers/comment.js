@@ -1,5 +1,6 @@
 (() => {
   const LoaderSpinner = require('../../modules/LoaderSpinner.js');
+  const AcceptanceModal = require('../../modules/AcceptanceModal.js');
   
   class MarkupCommentHandler {
     constructor({ model }) {
@@ -61,12 +62,17 @@
 
       this.model.postComment(comment)
         .then(response => {
+          const commentSentModal = new AcceptanceModal();
+          commentSentModal.setTitle("¡Comentario enviado!");
+          commentSentModal.setText("Su comentario ha sido enviado. ¡Muchas gracias!");
           loaderSpinner.turnOff();
+          commentSentModal.show();
         })
         .catch(error => {
           loaderSpinner.turnOff()
-          reRenderInitialState();
+          this.reRenderInitialState();
           console.log('error');
+          console.log(error);
           alert('La base de datos no pudo actualizarse, por favor contactar al administrador del sistema');
         });
     }

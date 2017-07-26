@@ -1,5 +1,6 @@
 (() => {
   const LoaderSpinner = require('../../modules/LoaderSpinner.js');
+  const AcceptanceModal = require('../../modules/AcceptanceModal.js');
   
   class MarkupConfirmationHandler {
     constructor({ model }) {
@@ -64,8 +65,12 @@
 
       this.model.handleConfirmation(confirmedGuests)
         .then(response => {
+          const acceptanceModal = new AcceptanceModal();
+          acceptanceModal.setTitle("¡Confirmación enviada!");
+          acceptanceModal.setText("Los datos de confirmación han sido enviados. ¡Muchas gracias!");
           loaderSpinner.turnOff();
           this.$modal.modal('hide');
+          acceptanceModal.show();
         })
         .catch(error => {
           loaderSpinner.turnOff();
