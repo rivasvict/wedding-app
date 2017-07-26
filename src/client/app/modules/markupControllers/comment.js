@@ -64,7 +64,7 @@
         .then(response => {
           const commentSentModal = new AcceptanceModal();
           commentSentModal.setTitle("¡Comentario enviado!");
-          commentSentModal.setText("Su comentario ha sido enviado. ¡Muchas gracias!");
+          commentSentModal.setText("Muchas gracias por tus buenos deseos, ya los hemos recibido.");
           loaderSpinner.turnOff();
           commentSentModal.show();
         })
