@@ -3,6 +3,7 @@
     constructor(text) {
       this.$cover = $(".cover");
       this.setText(text);
+      this.turnOffTimeout = 500;
     }
     
     setText(text) {
@@ -13,8 +14,14 @@
       this.$cover.addClass("on");
     }
     
+    setTurnOffTimeout(timeout) {
+      this.turnOffTimeout = timeout;
+    }
+    
     turnOff() {
-      this.$cover.removeClass("on");
+      setTimeout(() => {
+        this.$cover.removeClass("on");
+      }, this.turnOffTimeout);
     }
   }
 
