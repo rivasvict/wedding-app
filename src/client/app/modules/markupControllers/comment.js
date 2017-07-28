@@ -62,9 +62,10 @@
 
       this.model.postComment(comment)
         .then(response => {
-          const commentSentModal = new AcceptanceModal();
-          commentSentModal.setTitle("¡Comentario enviado!");
-          commentSentModal.setText("Muchas gracias por tus buenos deseos, ya los hemos recibido.");
+          const commentSentModal = new AcceptanceModal(
+            "¡Comentario enviado!",
+            "Muchas gracias por tus buenos deseos, ya los hemos recibido."
+          );
           loaderSpinner.turnOff();
           commentSentModal.show();
         })

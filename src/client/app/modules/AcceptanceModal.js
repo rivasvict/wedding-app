@@ -4,11 +4,14 @@
     /**
      * Class constructor.
      */
-    constructor() {
+    constructor(title, text) {
       this.$modal = $("#successModal");
       this.$title = this.$modal.find(".modal-title");
       this.$body  = this.$modal.find(".success-body-text");
       this.$acceptButton = this.$modal.find(".accept-button");
+      
+      this.setTitle(title);
+      this.setText(text);
     }
     
     /**

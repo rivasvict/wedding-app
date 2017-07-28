@@ -65,9 +65,10 @@
 
       this.model.handleConfirmation(confirmedGuests)
         .then(response => {
-          const acceptanceModal = new AcceptanceModal();
-          acceptanceModal.setTitle("¡Confirmación enviada!");
-          acceptanceModal.setText("¡Gracias! Hemos confirmado su asistencia, los esperamos.");
+          const acceptanceModal = new AcceptanceModal(
+            "¡Confirmación enviada!",
+            "¡Gracias! Hemos confirmado su asistencia, los esperamos."
+          );
           loaderSpinner.turnOff();
           this.$modal.modal('hide');
           acceptanceModal.show();
