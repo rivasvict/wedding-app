@@ -14,7 +14,7 @@
     }
 
     defineMarkup() {
-      this.$modal = $('.modal');
+      this.$modal = $('#confirmation');
       this.$target = this.$modal.find('.modal-body');
     }
 
