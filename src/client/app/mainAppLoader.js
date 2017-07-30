@@ -6,6 +6,7 @@
   const MarkupHandlerForComment = require('./modules/markupControllers/comment.js');
   const Comment = require('./models/Comment.js');
   const LoaderSpinner = require('./modules/LoaderSpinner.js');
+  const TextAreaCharacterCounter = require('./modules/TextAreaCharacterCounter.js');
   require('jquery-serializejson');
 
   const urlParams = queryString.parse(location.search);
