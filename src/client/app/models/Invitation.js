@@ -75,8 +75,23 @@
       return guest.confirmed;
     }
 
+    confirmSingleGuest(guestId) {
+      return new Promise((resolve, reject) => {
+        this.controller.confirmSingleGuest(guestId)
+          .then(response => resolve(response))
+          .catch(error => reject(error));
+      });
+    }
+
+    unConfirmSinglueGuest(guestId) {
+      return new Promise((resolve, reject) => {
+        this.controller.unConfirmSingleGuest(guestId)
+          .then(response => resolve(response))
+          .catch(error => reject(error));
+      });
+    }
+
   }
 
   module.exports = Invitation;
 })();
-
