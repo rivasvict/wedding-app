@@ -32,7 +32,7 @@
       });
     }
 
-    unConfirmSinglueGUest(guestId) {
+    unConfirmSinglueGuest(guestId) {
     }
   }
 
