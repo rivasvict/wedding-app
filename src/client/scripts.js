@@ -6,6 +6,7 @@ var nodeModules = './../node_modules/';
 require('bootstrap-loader');
 require('font-awesome/css/font-awesome.min.css');
 require('magnific-popup/dist/magnific-popup.css');
+require('bootstrap-toggle/css/bootstrap-toggle.min.css');
 
 // Local css
 require(sourceDirectoryForCssDependencies + 'index.css');

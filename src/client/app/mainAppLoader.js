@@ -8,6 +8,7 @@
   const LoaderSpinner = require('./modules/LoaderSpinner.js');
   const VideoLoader = require('./modules/VideoLoader.js');
   require('jquery-serializejson');
+  require('bootstrap-toggle');
 
   const urlParams = queryString.parse(location.search);
   const invitationId = urlParams.invitationId;

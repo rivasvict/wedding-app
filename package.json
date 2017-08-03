@@ -46,6 +46,7 @@
     "babel": "^6.23.0",
     "body-parser": "^1.17.2",
     "bootstrap": "^3.3.7",
+    "bootstrap-toggle": "^2.2.2",
     "bunyan": "^1.8.10",
     "csvtojson": "^1.1.7",
     "dotenv": "^4.0.0",
