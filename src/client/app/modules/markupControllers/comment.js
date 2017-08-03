@@ -10,26 +10,39 @@
       this.$characterLimitCounterSpan.html(this.characterLimit);
       
       this.$target.on("change paste keyup", () => {
-        // limit possible text to the character limit, always
-        this.$target.val(this.$target.val().substr(0, this.characterLimit));
-        
-        const newContentString = this.$target.val();
-        const newContentStringLength = newContentString.length;
-        
-        console.log("Counter a " + newContentStringLength);
-        this.$counter.html(newContentStringLength + " de " + 
-          this.characterLimit + " caracteres disponibles.");
-          
-        if(newContentStringLength > (this.characterLimit - 20)) {
-          this.$counter.addClass("character-counter-close-warning");
-        } else {
-          this.$counter.removeClass("character-counter-close-warning");
-        }
-        
-        if(newContentStringLength == this.characterLimit) {
-          this.$characterLimitReachedModal.modal('show');
-        }
+        this.onTextareaChange();
       })
+    }
+    
+    getNewContentStringLength() {
+      return this.$target.val().length;
+    }
+    
+    setCounterTextBasedOnCharactersCount() {
+      this.$counter.html(this.getNewContentStringLength() + " de " + 
+        this.characterLimit + " caracteres disponibles.");
+    }
+    
+    adjustTextareaContentToCharacterLimit() {
+      this.$target.val(this.$target.val().substr(0, this.characterLimit));
+    }
+    
+    handleCounterClass() {
+      if(this.getNewContentStringLength() > (this.characterLimit - 20)) {
+        this.$counter.addClass("character-counter-close-warning");
+      } else {
+        this.$counter.removeClass("character-counter-close-warning");
+      }
+    }
+    
+    onTextareaChange() {
+      this.adjustTextareaContentToCharacterLimit();
+      this.setCounterTextBasedOnCharactersCount();
+      this.handleCounterClass();
+      
+      if(this.getNewContentStringLength() == this.characterLimit) {
+        this.$characterLimitReachedModal.modal('show');
+      }
     }
 
     defineModels(model) {
