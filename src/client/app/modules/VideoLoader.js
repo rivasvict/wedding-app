@@ -40,7 +40,7 @@
     
     insertVideoInSelector() {
       $('<video/>', {
-        id: 'header-video',
+        id: this.element_id.substring(1),
         preload: "auto",
         autoplay: "autoplay",
         muted: "true",
