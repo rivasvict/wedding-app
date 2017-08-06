@@ -1,0 +1,16 @@
+#successModal .modal-header h4#successLabel {
+  font-family: $font-potter;
+}
+
+#successModal .accept-button {
+  display: block;
+  margin: 0 auto;
+  margin-bottom: 12px;
+}
+
+#successModal .fa-check {
+  color: green;
+  font-size: 2em;
+  margin-top: 12px;
+  margin-bottom: 12px;
+}
