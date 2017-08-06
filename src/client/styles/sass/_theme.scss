@@ -703,6 +703,7 @@ h1#homeHeading .h1-part.date {
 
 .comment-container {
   text-align: center;
+  margin-bottom: 21px;
 }
 
 .sr-contact {
@@ -717,4 +718,12 @@ h1#homeHeading .h1-part.date {
 
 .comment-container p.character-counter-close-warning {
   color: red;
+}
+
+.fix-max-height {
+  max-height: 253px;
+}
+
+.fix-thumbnail {
+  width: 100%;
 }
