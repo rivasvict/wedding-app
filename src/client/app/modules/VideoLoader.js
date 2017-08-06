@@ -7,13 +7,16 @@
       this.element_id = "#" + element_id;
       this.src = src;
       
+      this.setShowAtMinWidth(showAtMinWidth);
+      this.conditionalLoad();
+    }
+    
+    setShowAtMinWidth(showAtMinWidth) {
       if(showAtMinWidth == undefined) {
         this.showAtMinWidth = null;
       } else {
         this.showAtMinWidth = showAtMinWidth;
       }
-      
-      this.conditionalLoad();
     }
     
     getScreenWidthInPixels() {
@@ -39,6 +42,12 @@
     }
     
     insertVideoInSelector() {
+      this.insertVideoTagInSelector();
+      this.insertVideoOptionMp4InSelector();
+      this.insertVideoOptionOggInSelector();
+    }
+    
+    insertVideoTagInSelector() {
       $('<video/>', {
         id: this.element_id.substring(1),
         preload: "auto",
@@ -46,12 +55,16 @@
         muted: "true",
         loop: "loop",
       }).appendTo(this.$elem);
-      
+    }
+    
+    insertVideoOptionMp4InSelector() {
       $('<source/>', {
         src: this.src + ".mp4",
         type: "video/mp4"
       }).appendTo(this.element_id);
-      
+    }
+    
+    insertVideoOptionOggInSelector() {
       $('<source/>', {
         src: this.src + ".ogg",
         type: "video/ogg"
