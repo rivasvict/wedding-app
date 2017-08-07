@@ -7,6 +7,43 @@
       this.defineModels(model);
       this.defineMarkup();
       this.setEventsForModalHandling();
+      this.characterLimit = 450;
+      this.$characterLimitCounterSpan.html(this.characterLimit);
+      
+      this.$target.on("change paste keyup", () => {
+        this.onTextareaChange();
+      })
+    }
+    
+    getNewContentStringLength() {
+      return this.$target.val().length;
+    }
+    
+    setCounterTextBasedOnCharactersCount() {
+      this.$counter.html(this.getNewContentStringLength() + " de " + 
+        this.characterLimit + " caracteres disponibles.");
+    }
+    
+    adjustTextareaContentToCharacterLimit() {
+      this.$target.val(this.$target.val().substr(0, this.characterLimit));
+    }
+    
+    handleCounterClass() {
+      if(this.getNewContentStringLength() > (this.characterLimit - 20)) {
+        this.$counter.addClass("character-counter-close-warning");
+      } else {
+        this.$counter.removeClass("character-counter-close-warning");
+      }
+    }
+    
+    onTextareaChange() {
+      this.adjustTextareaContentToCharacterLimit();
+      this.setCounterTextBasedOnCharactersCount();
+      this.handleCounterClass();
+      
+      if(this.getNewContentStringLength() == this.characterLimit) {
+        this.$characterLimitReachedModal.modal('show');
+      }
     }
 
     defineModels(model) {
@@ -17,6 +54,9 @@
     defineMarkup() {
       this.$form = $('.comment-form');
       this.$target = this.$form.find('.comment-box');
+      this.$counter = this.$form.find('.comment-box-character-counter');
+      this.$characterLimitReachedModal = $('#comment-character-limit-reached-modal');
+      this.$characterLimitCounterSpan = $(".comment-character-limit-number");
     }
 
     setEventsForModalHandling() {

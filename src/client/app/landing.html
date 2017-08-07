@@ -268,6 +268,7 @@
               <p>Deje su mensaje para Cathy & Victor </p> 
           	  <div class="form-group">
                 <textarea class="comment-box" name="comment"></textarea>
+                <p class="comment-box-character-counter">&nbsp;</p>
               </div>
           	   <button class="btn row" id="send-comment">Enviar comentario</button>
             </form>
@@ -335,8 +336,8 @@
 	    </div>
 	</div>
     </div>
-    
-    <!-- Generic success acceptance modal, used by AcceptanceModel.js -->
+
+	<!-- Generic success acceptance modal, used by AcceptanceModel.js -->
     <div class="modal fade bs-example-modal-lg" id="successModal" tabindex="-1" role="dialog" labelledby="successLabel">
     	<div class="modal-dialog" role="document">
     	    <div class="modal-content">
@@ -353,5 +354,23 @@
     		</div>
 	    </div>
   	</div>
+    
+    <!-- comment character limit reached modal -->
+    <div class="modal fade bs-example-modal-lg" id="comment-character-limit-reached-modal" tabindex="-1" role="dialog" labelledby="confirmationLabel">
+    	<div class="modal-dialog" role="document">
+    	    <div class="modal-content">
+        		<div class="modal-header">
+        		    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        		    <h4 class="modal-title" id="confirmationLabel">Límite de caracteres alcanzado.</h4>
+        		</div>
+        		<div class="modal-body">
+              Disculpe, por favor escriba un mensaje con máximo <span class="comment-character-limit-number"></span> caracteres.
+        		</div>
+        		<div class="modal-footer">
+        		  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        		</div>
+    	    </div>
+    	</div>
+    </div>
 
 </div>
