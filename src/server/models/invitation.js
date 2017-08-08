@@ -25,7 +25,7 @@ class InvitationModel {
       })
       .update({
         confirmed: true
-      })
+      });
   }
 
   setAllConfirmationForAnInvitationToFalse(invitationId) {

@@ -1,0 +1,20 @@
+.modal {
+  .modal-body {
+    font-size: 1.4em;
+  }
+  .btn-primary {
+    background-color: #1ea6c5
+  }
+}
+
+#successModal {
+  .modal-success-body {
+    p {
+      font-size: 1.4em;
+    }
+  }
+}
+
+@media (min-width: 768px) {}
+@media (max-width: 768px) {}
+@media (min-width: 992px) {}

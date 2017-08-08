@@ -1,0 +1,29 @@
+.toggle {
+  width: 43%!important;
+  border-radius: 7px;
+
+  .btn {
+    text-transform: capitalize;
+    border-radius: 7px;
+    font-family: $font-potter;
+  }
+}
+
+.toggle-row {
+  padding: 5px 0px;
+  text-align: center;
+}
+
+.confirmation-button-container {
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .toggle {
+    width: 25%!important;
+    height: 20px!important;
+  }
+}
+@media (max-width: 768px) {
+}
+@media (min-width: 992px) {}

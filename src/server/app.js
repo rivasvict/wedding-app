@@ -6,7 +6,7 @@ const PORT              = 3000;
 const invitationRoute   = require('./routes/pool/invitation.js');
 const commentRoute      = require('./routes/pool/comments.js');
 const emailRoute        = require('./routes/pool/email.js');
-const bodyParser        = require('body-parser'); 
+const bodyParser        = require('body-parser');
 const Response          = require('./util/responseData.js');
 const response          = new Response();
 
@@ -19,12 +19,13 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
 app.use('/api/*', (req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*");
+  res.header('Access-Control-Allow-Origin', '*');
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept');
   next();
 });
 
+app.use('/api/invitation/confirmation/*', response.applyConfirmationDateRestriction.bind(response));
 app.use(invitationRoute(express));
 app.use(commentRoute(express));
 app.use(emailRoute(express));

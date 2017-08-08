@@ -3,6 +3,7 @@ const moment = require('moment');
 
 class ResponseDataFormatter {
   constructor() {
+    this.limitConfirmationDate = 1507266000000;
   }
 
   getFormatResponse(data) {
@@ -10,11 +11,15 @@ class ResponseDataFormatter {
       data,
       date: this.getServerDate(),
       status: 200
-    }
+    };
   }
 
   getServerDate() {
     return moment().valueOf();
+  }
+
+  isDateGreaterThanConfirmationLimit() {
+    return this.getServerDate() < this.limitConfirmationDate;
   }
 
   byMiddleware(next, res, data) {
@@ -25,6 +30,19 @@ class ResponseDataFormatter {
   afterGetRoute(req, res, next) {
     if (req.method === 'GET') {
       res.status(200).send(this.getFormatResponse(res.data));
+    }
+  }
+
+  applyConfirmationDateRestriction(req, res, next) {
+    if (req.method === 'POST') {
+      if (this.isDateGreaterThanConfirmationLimit()) {
+        next();
+      } else {
+        res.status(400).send(this.getFormatResponse({
+          message: 'You are out of time for this confirmation',
+          outOfDate: true
+        }));
+      }
     }
   }
 

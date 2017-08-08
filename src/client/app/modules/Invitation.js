@@ -15,7 +15,7 @@
     }
 
     handleConfirmation(guestIds) {
-      return this.post(`confirm`, {
+      return this.post(`confirmation/confirm`, {
         'invitationId': this.invitationId,
         'guestIds': guestIds
       });
@@ -26,13 +26,17 @@
     }
 
     confirmSingleGuest(guestId) {
-      return this.post(`confirmSingleGuest`, {
+      return this.post(`confirmation/confirmSingleGuest`, {
         guestId,
         invitationId: this.invitationId,
       });
     }
 
     unConfirmSinglueGuest(guestId) {
+      return this.post(`confirmation/unConfirmSingleGuest`, {
+        guestId,
+        invitationId: this.invitationId,
+      });
     }
   }
 

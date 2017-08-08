@@ -27,6 +27,12 @@
       this.guests = guests;
     }
 
+    getGuestById(guestId) {
+      return this.guests.find(guest => {
+        return guest.id === parseInt(guestId);
+      });
+    }
+
     handleConfirmation(guestIds) {
       return new Promise((resolve, reject) => {
         this.controller.handleConfirmation(guestIds)
@@ -75,18 +81,34 @@
       return guest.confirmed;
     }
 
+    updateSingleConfirmedGuestInLocal(guestId) {
+      const guuestToConfirmInLocal = this.getGuestById(guestId);
+      guuestToConfirmInLocal.confirmed = true;
+    }
+
+    updateSingleUnConfirmedGuestInLocal(guestId) {
+      const guuestToUnConfirmInLocal = this.getGuestById(guestId);
+      guuestToUnConfirmInLocal.confirmed = false;
+    }
+
     confirmSingleGuest(guestId) {
       return new Promise((resolve, reject) => {
         this.controller.confirmSingleGuest(guestId)
-          .then(response => resolve(response))
+          .then(response => {
+            this.updateSingleConfirmedGuestInLocal(guestId);
+            resolve(response);
+          })
           .catch(error => reject(error));
       });
     }
 
     unConfirmSinglueGuest(guestId) {
       return new Promise((resolve, reject) => {
-        this.controller.unConfirmSingleGuest(guestId)
-          .then(response => resolve(response))
+        this.controller.unConfirmSinglueGuest(guestId)
+          .then(response => {
+            this.updateSingleUnConfirmedGuestInLocal(guestId);
+            resolve(response);
+          })
           .catch(error => reject(error));
       });
     }
