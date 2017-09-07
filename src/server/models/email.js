@@ -43,12 +43,13 @@ class Email {
       to: this.to,
       from: '"Cathy y Victor" <cathyvictorinvitacionboda@gmail.com>',
       subject: 'Invitacion - Nos casamos!',
-      html: 'Para familia: ' + this.familyName + '<br>' +
-            'nos complace anunciarles que nos casamos y en union de nuestras familias' +
-            'queremos nos complaceria que nos acompa;aras en estos dias tan especiales ' +
-            'por favor pincha aqui: ' + this.invitationUrl + ' para confirmar' +
-            'tu asistencia y la de tus acompa;antes<br>' +
-            '<b>Gracias!</b><br><b>Flia. Rivas Pulgar</b>'
+      html: 'Para familia: ' + this.familyName + '<br><br>' +
+            'Estimados amigos y familiares, nos complace anunciar que nos unimos en sagrado matrimonio. ' +
+            'Sería un honor para nosotros contar con su presencia en este día tan especial, ' +
+            'por favor presione el siguiente link: ' + this.invitationUrl + ' para confirmar ' +
+            'su asistencia y la de sus acompañantes<br><br>' +
+            '<b>IMPORTANTE: Favor confirmar asistencia antes del 15 de Octubre del 2017. De lo contrario no podrá hacerlo mediante esta invitación</b><br><br>' +
+            '<b>Gracias!</b><br><b>Cathy & Victor.</b>'
     }
   }
 

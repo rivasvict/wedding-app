@@ -3,7 +3,7 @@ const moment = require('moment');
 
 class ResponseDataFormatter {
   constructor() {
-    this.limitConfirmationDate = 1507266000000;
+    this.limitConfirmationDate = 1508130000000;
   }
 
   getFormatResponse(data) {
